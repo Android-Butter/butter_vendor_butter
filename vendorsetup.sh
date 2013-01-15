@@ -1,2 +1,1 @@
-add_lunch_combo dkosp_pyramid-eng
-
+add_lunch_combo pyramid-userdebug
