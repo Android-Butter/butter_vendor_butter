@@ -24,7 +24,8 @@ PRODUCT_COPY_FILES += \
 # Required packages
 PRODUCT_PACKAGES += \
     LatinIME \
-    Superuser \
+    PerformanceControl \
+    SuperSU \
     su
 
 
