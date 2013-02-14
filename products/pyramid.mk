@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration.
-$(call inherit-product, device/htc/pyramid/full_pyramid.mk)
+$(call inherit-product, device/htc/pyramid/full_DragunKorr.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/dkosp/config/common.mk)
@@ -9,7 +9,7 @@ $(call inherit-product, vendor/dkosp/config/gsm.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := pyramid
-PRODUCT_BRAND := HTC
+PRODUCT_BRAND := htc
 PRODUCT_DEVICE := pyramid
 PRODUCT_MODEL := HTC Sensation
 PRODUCT_MANUFACTURER := HTC
