@@ -53,8 +53,8 @@ PRODUCT_COPY_FILES += \
     vendor/dkosp/prebuilt/common/bin/sysinit:system/bin/sysinit \
     vendor/dkosp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/dkosp/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
-    vendor/dkosp/prebuilt/common/etc/init.d/98swap_cache_v100:system/etc/init.d/98swap_cache_v100 \
-    vendor/dkosp/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf 
+    vendor/dkosp/prebuilt/common/etc/init.d/98swap_cache_v100:system/etc/init.d/98swap_cache_v100 
+    
 
 
 
