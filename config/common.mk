@@ -53,7 +53,8 @@ PRODUCT_COPY_FILES += \
     vendor/dkosp/prebuilt/common/bin/sysinit:system/bin/sysinit \
     vendor/dkosp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/dkosp/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
-  
+    vendor/dkosp/prebuilt/common/etc/init.d/98swap_cache_v100:system/etc/init.d/98swap_cache_v100 \
+    vendor/dkosp/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf 
 
 
 
@@ -71,7 +72,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Version Info
 PRODUCT_VERSION_MAJOR = 5
-PRODUCT_VERSION_MINOR = 0
+PRODUCT_VERSION_MINOR = 1
 PRODUCT_VERSION_MAINTENANCE = 0
 
 ifeq ($(NIGHTLY_BUILD),true)
