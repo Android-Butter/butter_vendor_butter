@@ -25,6 +25,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LatinIME \
     PerformanceControl \
+    Toolbox \
+    DragunKorrWidgets \
+    DragunKorrWallpapers \
     SuperSU \
     su
 
