@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= DragunKorr
+PRODUCT_BRAND ?= Butter
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -25,8 +25,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LatinIME \
     PerformanceControl \
-    Toolbox \
-    DragunKorrWidgets \
     DragunKorrWallpapers \
     SuperSU \
     su
@@ -53,21 +51,21 @@ PRODUCT_PACKAGES += \
 
 # Utilize init.d scripts
 PRODUCT_COPY_FILES += \
-    vendor/dkosp/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/dkosp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/dkosp/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
-    vendor/dkosp/prebuilt/common/etc/init.d/98swap_cache_v100:system/etc/init.d/98swap_cache_v100 
+    vendor/butter/prebuilt/common/bin/sysinit:system/bin/sysinit \
+    vendor/butter/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/butter/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
+    vendor/butter/prebuilt/common/etc/init.d/98swap_cache_v100:system/etc/init.d/98swap_cache_v100 
     
 
 
 
 # Prebuilt commandline tools
 PRODUCT_COPY_FILES += \
-    vendor/dkosp/prebuilt/common/xbin/powertop:system/xbin/powertop \
-    vendor/dkosp/prebuilt/common/etc/profile:system/etc/profile
+    vendor/butter/prebuilt/common/xbin/powertop:system/xbin/powertop \
+    vendor/butter/prebuilt/common/etc/profile:system/etc/profile
 
 # Backup Transport
-PRODUCT_PACKAGE_OVERLAYS += vendor/dkosp/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/butter/overlay/common
 
 # Disable strict mode
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -75,13 +73,13 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Version Info
 PRODUCT_VERSION_MAJOR = 5
-PRODUCT_VERSION_MINOR = 4
+PRODUCT_VERSION_MINOR = 5
 PRODUCT_VERSION_MAINTENANCE = 0
 
 ifeq ($(NIGHTLY_BUILD),true)
-    ROM_VERSION := DragunKorr-$(PRODUCT_CODENAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-Nightly-$(shell date +%Y.%m.%d)
+    ROM_VERSION := Butter-$(PRODUCT_CODENAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-Nightly-$(shell date +%Y.%m.%d)
 else
-    ROM_VERSION := DragunKorr-$(PRODUCT_CODENAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
+    ROM_VERSION := Butter-$(PRODUCT_CODENAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
