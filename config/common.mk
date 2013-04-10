@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LatinIME \
     PerformanceControl \
-    DragunKorrWallpapers \
+    ButterBoyWallpapers \
     SuperSU \
     su
 
@@ -73,7 +73,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Version Info
 PRODUCT_VERSION_MAJOR = 5
-PRODUCT_VERSION_MINOR = 5
+PRODUCT_VERSION_MINOR = 7
 PRODUCT_VERSION_MAINTENANCE = 0
 
 ifeq ($(NIGHTLY_BUILD),true)
