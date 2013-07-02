@@ -8,7 +8,7 @@ $(call inherit-product, vendor/butter/config/common_full_phone.mk)
 $(call inherit-product, vendor/butter/config/gsm.mk)
 
 # Setup device specific product configuration.
-PRODUCT_NAME := pyramid
+PRODUCT_NAME := butter_pyramid
 PRODUCT_BRAND := htc
 PRODUCT_DEVICE := pyramid
 PRODUCT_MODEL := HTC Sensation
