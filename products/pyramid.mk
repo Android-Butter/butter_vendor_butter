@@ -2,7 +2,7 @@
 $(call inherit-product, device/htc/pyramid/full_butter.mk)
 
 # Inherit common product files.
-$(call inherit-product, vendor/butter/config/common.mk)
+$(call inherit-product, vendor/butter/config/common_full_phone.mk)
 
 # Inherit GSM files.
 $(call inherit-product, vendor/butter/config/gsm.mk)
@@ -14,12 +14,7 @@ PRODUCT_DEVICE := pyramid
 PRODUCT_MODEL := HTC Sensation
 PRODUCT_MANUFACTURER := HTC
 
-#PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=GT-I9100G TARGET_DEVICE=GT-I9100G BUILD_FINGERPRINT=samsung/GT-I9100G/GT-I9100G:4.0.3/IML74K/XXLPQ:user/release-keys PRIVATE_BUILD_DESC="GT-I9100G-user 4.0.3 IML74K XXLPQ release-keys"
-
-# Inherit common build.prop overrides
--include vendor/butter/configs/common_versions.mk
+# Set build fingerprint / ID / Product Name ect.
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_pyramid BUILD_FINGERPRINT=tmous/htc_pyramid/pyramid:4.0.3/IML74K/356011.14:user/release-keys PRIVATE_BUILD_DESC="3.32.531.14 CL356011 release-keys" BUILD_NUMBER=356011
 
 
-
-# Inherit drm blobs
--include vendor/butter/configs/common_drm_phone.mk
