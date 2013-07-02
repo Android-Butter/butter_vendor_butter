@@ -52,9 +52,8 @@ PRODUCT_PACKAGES += \
 # Utilize init.d scripts
 PRODUCT_COPY_FILES += \
     vendor/butter/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/butter/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/butter/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
-    vendor/butter/prebuilt/common/etc/init.d/98swap_cache_v100:system/etc/init.d/98swap_cache_v100 
+    vendor/butter/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl 
+   
     
 
 
@@ -72,14 +71,14 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.strictmode.disable=true
 
 # Version Info
-PRODUCT_VERSION_MAJOR = 5
-PRODUCT_VERSION_MINOR = 8
-PRODUCT_VERSION_MAINTENANCE = 0
+PRODUCT_VERSION_MAJOR = 6
+PRODUCT_VERSION_MINOR = 0
+PRODUCT_VERSION_MAINTENANCE = 1
 
 ifeq ($(NIGHTLY_BUILD),true)
-    ROM_VERSION := Butter-$(PRODUCT_CODENAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-Nightly-$(shell date +%Y.%m.%d)
+    ROM_VERSION := BUTTER-$(PRODUCT_CODENAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-Nightly-$(shell date +%Y.%m.%d)
 else
-    ROM_VERSION := Butter-$(PRODUCT_CODENAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
+    ROM_VERSION := BUTTER-$(PRODUCT_CODENAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
