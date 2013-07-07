@@ -30,12 +30,12 @@ PRODUCT_MOTD := "\n\n\n--------------------BUTTER---------------------\n
 
 # Copy compatible prebuilt files
 PRODUCT_COPY_FILES +=  \
-    vendor/ev/prebuilt/qhd/media/bootanimation.zip:system/media/bootanimation.zip
+    vendor/butter/prebuilt/qhd/media/bootanimation.zip:system/media/bootanimation.zip
 
 # qHD overlay
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/ev/overlay/qhd
+    vendor/butter/overlay/qhd
 
 # Hot reboot
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/ev/overlay/hot_reboot
+    vendor/butter/overlay/hot_reboot
