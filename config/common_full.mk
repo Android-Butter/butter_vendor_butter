@@ -4,6 +4,7 @@
 include frameworks/base/data/sounds/AllAudio.mk
 
 include vendor/butter/config/themes.mk
+include vendor/butter/config/common_tools.mk
 
 # English Dictionary
 PRODUCT_PACKAGE_OVERLAYS += vendor/butter/overlay/dictionaries/english
@@ -19,6 +20,7 @@ ifeq ($(TARGET_USE_KEYBOARD), international)
 endif
 
 PRODUCT_PACKAGES += \
+    VideoEditor \
     VoiceDialer \
     Basic \
     HoloSpiralWallpaper \

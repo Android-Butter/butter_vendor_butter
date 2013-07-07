@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= Butter
+PRODUCT_BRAND ?= butter
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -24,47 +24,16 @@ PRODUCT_COPY_FILES += \
 # Required packages
 PRODUCT_PACKAGES += \
     LatinIME \
-    PerformanceControl \
-    ButterBoyWallpapers \
-    SuperSU \
+    Superuser \
     su
 
-
-
-# Openssh
+# Optional packages
 PRODUCT_PACKAGES += \
-    ssh \
-    sftp \
-    scp \
-    sshd \
-    ssh-keygen \
-    sshd_config \
-    sshd_motd \
-    start-ssh
-
-# e2fsprogs
-PRODUCT_PACKAGES += \
-    e2fsck \
-    mke2fs \
-    tune2fs \
-    resize2fs
-
-# Utilize init.d scripts
-PRODUCT_COPY_FILES += \
-    vendor/butter/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/butter/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl 
-   
-    
-
-
-
-# Prebuilt commandline tools
-PRODUCT_COPY_FILES += \
-    vendor/butter/prebuilt/common/xbin/powertop:system/xbin/powertop \
-    vendor/butter/prebuilt/common/etc/profile:system/etc/profile
+    AndroidTerm 
+ 
 
 # Backup Transport
-PRODUCT_PACKAGE_OVERLAYS += vendor/butter/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/ev/overlay/common
 
 # Disable strict mode
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -72,14 +41,25 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Version Info
 PRODUCT_VERSION_MAJOR = 6
-PRODUCT_VERSION_MINOR = 0
-PRODUCT_VERSION_MAINTENANCE = 1
+PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MAINTENANCE = 0
+
+# Allow overriding p1/2 etc from commandline
+ifneq "" "$(DEVICE_VERSION_OVERRIDE)"
+  PRODUCT_VERSION_EXTRA = $(DEVICE_VERSION_OVERRIDE)
+else
+  PRODUCT_VERSION_EXTRA = $(PRODUCT_VERSION_DEVICE_SPECIFIC)
+endif
 
 ifeq ($(NIGHTLY_BUILD),true)
-    ROM_VERSION := BUTTER-$(PRODUCT_CODENAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-Nightly-$(shell date +%Y.%m.%d)
+  ROM_VERSION := $(TARGET_PRODUCT)-nightly-$(shell date +%Y.%m.%d)
+else ifeq ($(TESTING_BUILD),true)
+  ROM_VERSION := $(TARGET_PRODUCT)-testing-$(shell date +%Y.%m.%d)
 else
-    ROM_VERSION := BUTTER-$(PRODUCT_CODENAME)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)
+  ROM_VERSION := $(TARGET_PRODUCT)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_EXTRA)-$(PRODUCT_CODENAME)
 endif
+
+ROM_VERSION := $(shell echo ${ROM_VERSION} | tr [:upper:] [:lower:])
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.romversion=$(ROM_VERSION)
