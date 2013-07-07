@@ -25,6 +25,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LatinIME \
     Superuser \
+    ButterBoyWallpapers \
     su
 
 # Optional packages
@@ -33,7 +34,7 @@ PRODUCT_PACKAGES += \
  
 
 # Backup Transport
-PRODUCT_PACKAGE_OVERLAYS += vendor/ev/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/butter/overlay/common
 
 # Disable strict mode
 ADDITIONAL_DEFAULT_PROPERTIES += \
