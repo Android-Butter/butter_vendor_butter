@@ -1,5 +1,4 @@
-# Inherit AOSP device configuration.
-$(call inherit-product, device/htc/pyramid/full_pyramid.mk)
+
 
 # Specify phone tech before including full_phone
 $(call inherit-product, vendor/butter/config/gsm.mk)
