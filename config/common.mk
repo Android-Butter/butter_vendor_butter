@@ -21,10 +21,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+PRODUCT_COPY_FILES +=  \
+    vendor/butter/prebuilt/common/app/SuperSU.apk:system/app/SuperSU.apk
+ 
+
+
+PRODUCT_COPY_FILES +=  \
+     vendor/butter/prebuilt/common/xbin/su:system/xbin/su 
+
+
+
+
 # Required packages
 PRODUCT_PACKAGES += \
     LatinIME \
-    Superuser \
+    SuperSU \
     ButterBoyWallpapers \
     su
 
